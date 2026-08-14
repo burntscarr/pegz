@@ -41,7 +41,7 @@ button, input { font: inherit; }
 }
 
 .hud-block { min-width: 72px; display: flex; flex-direction: column; }
-.hud-score { align-items: center; }
+.hud-score, .hud-reds { align-items: center; }
 .hud-label { font-size: 10px; letter-spacing: .14em; opacity: .6; }
 #hud strong { font-size: 20px; }
 
@@ -148,3 +148,6 @@ dialog label { display: block; margin: 14px 0; }
   }
   #controls button { width: 100%; }
 }
+
+/* Final-red celebration */
+#gameWrap.celebrating { overflow: hidden; }

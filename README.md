@@ -34,3 +34,15 @@ The Settings menu supports:
 - Aim sensitivity
 - Aim guide toggle
 
+
+
+## Added gameplay behavior
+
+- Gravity-aware dotted aim prediction, including wall/ceiling and peg bounces.
+- Ceiling is a solid bounce wall.
+- Hit pegs light up and disappear 10 seconds after their individual hit time.
+- HUD shows remaining red pegs.
+- Peg hits show score popups.
+- Final red peg triggers slow motion, zoom, shake, flash, and particles.
+- A new best level score stores its exact seed as `bestSeed`.
+- Generated shape levels 006 through 026 are included and already listed in `levels/index.json`.
