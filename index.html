@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#111827">
+  <title>PegDrop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <header id="hud">
+      <div class="hud-block">
+        <span class="hud-label">LEVEL</span>
+        <strong id="levelLabel">001</strong>
+      </div>
+      <div class="hud-block hud-score">
+        <span class="hud-label">SCORE</span>
+        <strong id="scoreLabel">0</strong>
+      </div>
+      <div class="hud-block">
+        <span class="hud-label">BALLS</span>
+        <strong id="ballsLabel">0</strong>
+      </div>
+    </header>
+
+    <section id="gameWrap">
+      <canvas id="gameCanvas" aria-label="PegDrop game board"></canvas>
+      <div id="overlay" class="hidden">
+        <div class="panel">
+          <h1 id="overlayTitle">PegDrop</h1>
+          <p id="overlayText"></p>
+          <div class="panel-actions">
+            <button id="overlayPrimary">Play</button>
+            <button id="overlaySecondary" class="secondary">Close</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="controls">
+      <button id="prevLevel" class="icon-btn" title="Previous level">◀</button>
+      <button id="restartBtn">Restart</button>
+      <button id="statsBtn">Stats</button>
+      <button id="settingsBtn">Settings</button>
+      <button id="nextLevel" class="icon-btn" title="Next level">▶</button>
+    </footer>
+  </main>
+
+  <dialog id="settingsDialog">
+    <form method="dialog">
+      <h2>Settings</h2>
+      <label>
+        Aim sensitivity
+        <input id="sensitivityInput" type="range" min="0.25" max="2" step="0.05">
+        <span id="sensitivityValue"></span>
+      </label>
+      <label class="checkrow">
+        <input id="showGuideInput" type="checkbox">
+        Show aim guide
+      </label>
+      <div class="dialog-actions">
+        <button id="exportSaveBtn" type="button">Export Save</button>
+        <label class="file-button">
+          Import Save
+          <input id="importSaveInput" type="file" accept="application/json,.json">
+        </label>
+        <button id="resetSaveBtn" type="button" class="danger">Reset Progress</button>
+        <button>Done</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="statsDialog">
+    <form method="dialog">
+      <h2>Career Stats</h2>
+      <div id="statsBody"></div>
+      <div class="dialog-actions">
+        <button>Done</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="storage.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

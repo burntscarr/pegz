@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>PegDrop Level Editor</title>
+  <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>PegDrop Level Editor</h1>
+        <p>Tap cells to toggle pegs. Hold Shift while clicking, or use Half Grid, for fractional placement.</p>
+      </div>
+      <a href="../">Game</a>
+    </header>
+
+    <section class="settings">
+      <label>Level ID <input id="levelId" value="004" inputmode="numeric"></label>
+      <label>Balls <input id="balls" type="number" value="10" min="1"></label>
+      <label>Red min % <input id="redMin" type="number" value="35" min="1" max="100"></label>
+      <label>Red max % <input id="redMax" type="number" value="45" min="1" max="100"></label>
+      <label class="check"><input id="halfGrid" type="checkbox"> Half-grid placement</label>
+    </section>
+
+    <section class="layout">
+      <div id="boardWrap">
+        <canvas id="editorCanvas"></canvas>
+      </div>
+
+      <aside>
+        <div class="stats">
+          <div>Pegs</div><strong id="pegCount">0</strong>
+          <div>Preview seed</div><strong id="seedLabel">—</strong>
+        </div>
+        <button id="randomizeBtn">Preview Randomization</button>
+        <button id="clearPreviewBtn" class="secondary">Hide Preview</button>
+        <button id="testBtn">Test Level</button>
+        <button id="downloadBtn">Download JSON</button>
+        <button id="clearBtn" class="danger">Clear Board</button>
+      </aside>
+    </section>
+  </main>
+
+  <script src="editor.js"></script>
+</body>
+</html>
